@@ -4,10 +4,37 @@
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; color:var(--ink); background:var(--paper); font-family:Manrope,Arial,sans-serif; font-size:16px; line-height:1.6; }
-a { color:inherit; text-decoration:none; } a:focus-visible { outline:3px solid var(--green); outline-offset:4px; }
-.site-header { width:min(1240px,calc(100% - 48px)); min-height:88px; margin:auto; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+a { color:inherit; text-decoration:none; } 
+a:focus-visible { outline:3px solid var(--green); outline-offset:4px; }
+
+header.site-header { 
+    top: 0;
+    position:fixed; 
+    z-index:100;
+   /*  background-color: rgba(21, 32, 26, 0.8);   Matches body color with some transparency */
+    backdrop-filter: blur(150px); /* Blurs the content underneath */
+    width:min(100% ,calc(100%)); 
+    min-height:88px; 
+    margin:auto; 
+    display:flex;
+    padding: 0 48px;
+    align-items:center; 
+    justify-content:space-between; 
+    border-bottom:1px solid var(--line); 
+}
+
+main#top { margin-top: 88px;}
+
 .brand { font:700 1.45rem/1 'DM Mono',monospace; letter-spacing:-.12em; }.brand span { color:var(--green); }
-.site-header nav { display:flex; gap:2rem; font:500 .77rem 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.07em; }.header-actions { display:flex; align-items:center; gap:1.35rem; }.theme-toggle { display:inline-flex; align-items:center; gap:.45rem; padding:0; border:0; color:var(--ink); background:transparent; cursor:pointer; font:500 .72rem 'DM Mono',monospace; letter-spacing:.06em; text-transform:uppercase; }.theme-toggle:hover,.site-header nav a:hover,.header-link:hover,.text-link:hover,.project-link:hover,.footer-meta a:hover { color:var(--green); }
+.site-header nav { display:flex; gap:2rem; font:500 .77rem 'DM Mono',monospace; text-transform:uppercase; 
+    letter-spacing:.07em; }.header-actions { display:flex; align-items:center; gap:1.35rem; }
+
+.theme-toggle { display:inline-flex; align-items:center; gap:.45rem; padding:0; border:0; 
+    color:var(--ink); background:transparent; cursor:pointer; font:500 .72rem 'DM Mono',monospace; 
+    letter-spacing:.06em; text-transform:uppercase; }
+
+.theme-toggle:hover,.site-header nav a:hover,.header-link:hover,.text-link:hover,.project-link:hover,.footer-meta a:hover { color:var(--green); }
+
 .header-link,.text-link,.project-link { font:500 .78rem 'DM Mono',monospace; text-transform:uppercase; letter-spacing:.06em; }.header-link span,.text-link span,.project-link span { color:var(--green); font-size:1rem; }
 .hero { width:min(1240px,calc(100% - 48px)); margin:auto; padding:clamp(5rem,12vw,10rem) 0 5rem; }.eyebrow,.project-type { margin:0 0 1.25rem; color:var(--green); font:500 .72rem 'DM Mono',monospace; letter-spacing:.1em; text-transform:uppercase; }
 h1,h2,h3,p { margin-top:0; }.hero h1 { max-width:950px; margin:0; font-size:clamp(3.4rem,8.2vw,7.7rem); letter-spacing:-.08em; line-height:.98; font-weight:800; }.hero h1 em,.about h2 em { font-family:'Playfair Display',serif; font-weight:600; letter-spacing:-.08em; }
